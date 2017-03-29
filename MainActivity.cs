@@ -7,7 +7,7 @@ using System;
 
 namespace GradeCalculator
 {
-    [Activity(Label = "GradeCalculator", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light.NoActionBar")]
+    [Activity(Label = "Оценката", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light.NoActionBar")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -19,7 +19,7 @@ namespace GradeCalculator
         [Java.Interop.Export("getInfo")]
         public void InfoDialog(View v)
         {
-            ShowAlertDialog("Информация", "Това е пробна информация за приложението. То има за цел да улесни работата на учителите при проверка на контролни и учениците да могат да проверят от колко точки се нуждаят за да получат желаната оценка. Формулата е стандартна. \n\n *Ако се използва за НВО се смятат 95 максимални.", "Затвори");
+            ShowAlertDialog("Информация", "Приложението служи за изчисляване на оценка чрез въведени максимални и получени точки. Целта му е да улесни работата на учители и ученици при проверяване на оценката. Използва стандартната формула.\n\n *Ако се използва за НВО се смятат 95 максимални.", "Затвори");
         }
 
         [Java.Interop.Export("calculateMark")]
@@ -71,7 +71,7 @@ namespace GradeCalculator
                 ShowAlertDialogOnlyMessage("Получените точки трябва да са 0 или повече");
                 return true;
             }
-            if (maxPoints < 1)
+            if (maxPoints <= 0)
             {
                 ShowAlertDialogOnlyMessage("Максималните точки трябва да са повече от 0");
                 return true;
