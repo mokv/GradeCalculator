@@ -7,7 +7,7 @@ using System;
 
 namespace GradeCalculator
 {
-    [Activity(Label = "Оценката", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light.NoActionBar")]
+    [Activity(Label = "Оценката", MainLauncher = true, Icon = "@drawable/icon", Theme = "@android:style/Theme.Holo.Light.NoActionBar.Fullscreen")]
     public class MainActivity : Activity
     {
         protected override void OnCreate(Bundle bundle)
@@ -30,7 +30,7 @@ namespace GradeCalculator
                 ShowAlertDialogOnlyMessage("Полетата НЕ трябва да са празни!");
                 return;
             }
-            if (String.IsNullOrEmpty(FindViewById<EditText>(Resource.Id.receivedPoints).Text))
+            if (String.IsNullOrEmpty(FindViewById<EditText>(Resource.Id.maxPoints).Text))
             {
                 ShowAlertDialogOnlyMessage("Полетата НЕ трябва да са празни!");
                 return;
